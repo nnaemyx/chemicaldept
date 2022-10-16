@@ -21,7 +21,7 @@ app.use(cors());
 app.use('/api', router)
 
 // Serve frontend
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
 
   app.get("*", (req, res) =>
