@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.static("build"));
 
+
 app.use('/api/register', router)
 
 // Serve frontend
