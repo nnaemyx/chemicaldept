@@ -16,13 +16,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use(express.static("build"));
-
 
 app.use('/api/register', router)
 
 // Serve frontend
-if (process.env.PORT === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
 
   app.get("*", (req, res) =>
