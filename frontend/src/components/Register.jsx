@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "./Spinner";
+import Toast from "./Toast";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +48,7 @@ const Register = () => {
     }
 
     if (isSuccess || user) {
-      toast.info("form submitted successfully")
+      <Toast/>
       navigate("/");
     }
 
